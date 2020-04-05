@@ -18,21 +18,6 @@ import java.io.IOException;
 
 @WebServlet("/controller")
 public class Controller extends HttpServlet {
-    private String code;
-   /* @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
-        code = filterConfig.getInitParameter("encoding");
-    }
-
-    @Override
-    public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        String codeRequest = servletRequest.getCharacterEncoding();
-        if ( code != null && !code.equalsIgnoreCase(codeRequest)){
-            servletRequest.setCharacterEncoding(code);
-            servletResponse.setCharacterEncoding(code);
-        }
-        filterChain.doFilter(servletRequest, servletResponse);
-    }*/
 
     private static Logger logger = LogManager.getLogger();
 
@@ -47,9 +32,6 @@ public class Controller extends HttpServlet {
     }
 
     private void processRequest(HttpServletRequest req, HttpServletResponse resp){
-        if (req.getSession().getAttribute("language") == null){
-            req.getSession().setAttribute("language", "de");
-        }
         String page;
         CommandFactory client = new CommandFactory();
         Command command = client.defineCommand(req);
@@ -64,7 +46,7 @@ public class Controller extends HttpServlet {
                 resp.sendRedirect(req.getContextPath() + page);
             }
         } catch (ServletException | IOException ex){
-            ex.printStackTrace();
+            logger.log(Level.ERROR, "Error while creating new client" + ex); // FIXME: 24.02.2020 
         }
     }
 

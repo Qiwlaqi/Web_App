@@ -1,12 +1,20 @@
 package com.malets.clean.main;
 
+import com.malets.clean.bean.Order;
 import com.malets.clean.bean.User;
-import com.malets.clean.dao.UserDAO;
+import com.malets.clean.dao.*;
 import com.malets.clean.exception.DAoException;
 import com.malets.clean.pool.CustomConnectionPool;
+import com.malets.clean.util.PasswordManager;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.io.UnsupportedEncodingException;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.List;
 
 public class TestConnection {
     private static Logger logger = LogManager.getLogger();
@@ -47,12 +55,13 @@ public class TestConnection {
             e.printStackTrace();
         }*/
         CustomConnectionPool.INSTANCE.getConnection();
-        UserDAO userDAO = new UserDAO();
-        logger.log(Level.INFO, "hi there");
-        //userDAO.create("lapik87", "pass", "Maksim", "Malets", 248965, 2);
-        String login = "maks77";
 
-        System.out.println(userDAO.findRole(login));
+        System.out.println(PasswordManager.INSTANCE.encrypt("pass"));
+        System.out.println(PasswordManager.INSTANCE.encrypt("lolololo"));
+
+        System.out.println(PasswordManager.INSTANCE.encrypt("lelelele"));
+
+
         //User user = new UserDAO().findUser(login);
         /*user.setLogin(login);
         user.setPassword("7777777");
@@ -64,4 +73,6 @@ public class TestConnection {
         CustomConnectionPool.INSTANCE.destroyPool();
 
     }
+
+
 }

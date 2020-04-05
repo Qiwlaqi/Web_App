@@ -3,7 +3,7 @@
 <head>
 </head>
 <body>
-<nav><a href="#">Home</a> | <a href="#">Contact</a> | <a href="#">About</a></nav>
-<p>Hi im just a simple header</p>
+<h3>Welcome, ${role}</h3>
+<p>What would you like to do?</p><hr/>
 </body>
 </html>

@@ -1,0 +1,323 @@
+
+.topnav {
+    background-color: #f8f8f8;
+    overflow: hidden;
+}
+
+.topnav a {
+    float: left;
+    color: #111111;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: rgb(255, 244, 143);
+    color: rgb(22, 22, 22);
+}
+#de{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    position: absolute;
+    top: 2%;
+    left: 83%;
+}
+#en{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    position: absolute;
+    top:2% ;
+    left: 85%;
+}
+button{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+#welcome{
+    position: absolute;
+    top: 1.80%;
+    left: 63%;
+}
+#cleaners{
+    background: rgb(159, 219, 221);
+    height: 70%;
+    font-family: 'Tenor Sans', sans-serif;
+  font-size: 17px;
+  color: #111;
+  letter-spacing: 2px;
+  line-height: 1.2em;
+  margin-bottom: 0;
+}
+
+#serv{
+    position: absolute;
+    top: 449px;
+    left: 65%;
+    text-decoration: none;
+    outline: none;
+    color: rgb(255, 250, 197);
+    display: inline-block;
+    position: relative;
+    padding: 15px 30px;
+    border: 3px solid;
+    border-image: linear-gradient(180deg, #ffc832, #ebbc3b, #f1c35f, #ffe365);
+    border-image-slice: 1;
+    margin: 10px 20px;  
+     font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    overflow: hidden;
+    letter-spacing: 2px;
+    
+  }
+ 
+  
+  #sun{
+    position: absolute;
+    top: 106%;
+    left: 55%;
+    color: rgb(212, 180, 35);
+    font-size: 29px;
+  }
+  #list{
+      position: absolute;
+      top: 115%;
+      left: 55%;
+  }
+#ser{
+    position: absolute;
+    top: 110%;
+    left: 3%;
+}
+
+
+.slider{
+    max-width: 90%;
+    position: relative;
+    margin: auto;
+    height: 800px;
+    margin-bottom: 15px;
+}
+/* Картинка мастабируется по отношению к родительскому элементу */
+.slider .item img {
+    object-fit: cover;
+    width: 100%;
+    height: 800px;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+
+
+/* Заголовок слайда */
+.slideText {
+    position: absolute;
+    color: rgb(255, 253, 240);
+    font-size: 60px;
+    /* Выравнивание текста по горизонтали и по вертикали*/
+    left: 10%;
+    top: 40%;
+    
+    /* Тень*/
+    text-shadow: 1px 1px 1px #000, 0 0 1em #000;
+    font-weight: 900;
+}
+
+#firf{
+    background: rgb(248, 200, 42);
+  height: 60%;
+}
+#firsttext{
+   
+    color: #806401; 
+    color: rgb(255, 253, 240);
+    font-size: 40px;
+    /* Выравнивание текста по горизонтали и по вертикали*/
+    position: absolute;
+    left: 20%;
+    right: 20%;
+    top: 180%;
+    
+    /* Тень*/
+    text-shadow: 1px 1px 1px rgb(255, 255, 255), 0 0 1em rgb(240, 213, 60);
+    font-weight: 900;
+}
+
+#secondtext{
+     color: #806401; 
+    color: rgb(255, 253, 240);
+    font-size: 26px;
+    /* Выравнивание текста по горизонтали и по вертикали*/
+    position: absolute;
+    left: 5%;
+    top: 200%;
+    right: 5%;
+    
+    /* Тень*/
+    text-shadow: 1px 1px 1px rgb(32, 28, 12), 0 0 1em rgb(216, 184, 0);
+    font-weight: 900;
+}
+#clean{
+   position: absolute;
+   top:330px ;
+   left: 40%;
+    text-decoration: none;
+    outline: none;
+    color: rgb(0, 112, 97);
+    display: inline-block;
+    position: relative;
+    padding: 15px 30px;
+    border: 3px solid;
+    border-image: linear-gradient(180deg, #51e3ee, #3bd7eb, #2ac8d3, #1cadda);
+    border-image-slice: 1;
+    margin: 10px 20px;  
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    overflow: hidden;
+    letter-spacing: 2px;
+}
+* {box-sizing: border-box}
+/* Full-width input fields */
+  input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* Add a background color when the inputs get focus */
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for all buttons */
+#bt {
+  background-color: rgb(159, 219, 221);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  
+}
+
+#bt:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f8958e;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 100%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+    width: 100%;
+  }
+}
+
+#cle{
+    position: absolute;
+   top:310px ;
+   left: 38%;
+    text-decoration: none;
+    outline: none;
+    color: rgb(0, 112, 97);
+    display: inline-block;
+    position: relative;
+    padding: 15px 30px;
+    border: 3px solid;
+    border-image: linear-gradient(180deg, #51e3ee, #3bd7eb, #2ac8d3, #1cadda);
+    border-image-slice: 1;
+    margin: 10px 20px;  
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    overflow: hidden;
+    letter-spacing: 2px;
+}

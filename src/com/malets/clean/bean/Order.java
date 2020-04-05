@@ -4,20 +4,19 @@ import java.io.Serializable;
 
 public class Order extends Entity implements Serializable, Cloneable {
     private int orderId;
-    private int clientId;
-    private int cleanerId;
-    private int serviceId;
+    private String clientLogin;
+    private String cleanerName;
+    private String description;
     private String date;
 
     public Order() {
     }
 
-    public Order(int orderId, int clientId, int cleanerId, int serviceId, String date) {
-        this.orderId = orderId;
-        this.clientId = clientId;
-        this.cleanerId = cleanerId;
-        this.serviceId = serviceId;
+    public Order(String cleanerName, String description, String date, String clientLogin) {
+        this.cleanerName = cleanerName;
+        this.description = description;
         this.date = date;
+        this.clientLogin = clientLogin;
     }
 
     public int getOrderId() {
@@ -28,28 +27,28 @@ public class Order extends Entity implements Serializable, Cloneable {
         this.orderId = orderId;
     }
 
-    public int getClientId() {
-        return clientId;
+    public String getClientLogin() {
+        return clientLogin;
     }
 
-    public void setClientId(int clientId) {
-        this.clientId = clientId;
+    public void setClientLogin(String clientLogin) {
+        this.clientLogin = clientLogin;
     }
 
-    public int getCleanerId() {
-        return cleanerId;
+    public String getCleanerName() {
+        return cleanerName;
     }
 
-    public void setCleanerId(int cleanerId) {
-        this.cleanerId = cleanerId;
+    public void setCleanerName(String cleanerName) {
+        this.cleanerName = cleanerName;
     }
 
-    public int getServiceId() {
-        return serviceId;
+    public String getDescription() {
+        return description;
     }
 
-    public void setServiceId(int serviceId) {
-        this.serviceId = serviceId;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getDate() {
@@ -70,9 +69,9 @@ public class Order extends Entity implements Serializable, Cloneable {
         }
         Order guest = (Order) obj;
         return orderId == guest.orderId &&
-                clientId == guest.clientId &&
-                cleanerId == guest.cleanerId &&
-                serviceId == guest.serviceId &&
+                (clientLogin == guest.clientLogin || (clientLogin != null && clientLogin.equals(guest.clientLogin)))&&
+                (cleanerName == guest.cleanerName || (cleanerName != null && cleanerName.equals(guest.cleanerName)))&&
+                (description == guest.description || (description != null && description.equals(guest.description)))&&
                 (date == guest.date || (date != null && date.equals(guest.date)));
     }
 
@@ -81,17 +80,17 @@ public class Order extends Entity implements Serializable, Cloneable {
         final int prime = 31;
         int result = 1;
         result = prime * result + orderId;
-        result = prime * result + clientId;
-        result = prime * result + cleanerId;
-        result = prime * result + serviceId;
+        result = prime * result + (clientLogin == null ? 0 : clientLogin.hashCode());
+        result = prime * result + (cleanerName == null ? 0 : cleanerName.hashCode());
+        result = prime * result + (description == null ? 0 : description.hashCode());
         result = prime * result + (date == null ? 0 : date.hashCode());
         return result;
     }
 
     @Override
     public String toString() {
-        return new StringBuilder().append("Order{").append("orderId=").append(orderId).append(", clientId=").
-                append(clientId).append(", cleanerId=").append(cleanerId).append(", serviceId=").append(serviceId).
+        return new StringBuilder().append("Order{").append("orderId=").append(orderId).append(", clientLogin=").
+                append(clientLogin).append(", cleanerName=").append(cleanerName).append(", description=").append(description).
                 append(", date='").append(date).append('}').toString();
     }
 }

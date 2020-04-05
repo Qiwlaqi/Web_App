@@ -26,5 +26,6 @@
     <orderEntry type="library" name="log4j-web-2.12.1" level="project" />
     <orderEntry type="library" name="log4j-jcl-2.12.1" level="project" />
     <orderEntry type="library" name="taglibs-standard-impl-1.2.5" level="project" />
+    <orderEntry type="library" name="jstl-1.2" level="project" />
   </component>
 </module>

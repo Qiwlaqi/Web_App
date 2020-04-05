@@ -22,7 +22,7 @@ public class CommandFactory {
         try {
             CommandType currentEnum = CommandType.valueOf(action.toUpperCase());
             current = currentEnum.getCommand();
-            logger.log(Level.DEBUG, "Current command is: " + action);
+            logger.log(Level.INFO, "Current command is: " + action);
         } catch (IllegalArgumentException ex){
             logger.log(Level.ERROR, "Unknown command", ex);
         }

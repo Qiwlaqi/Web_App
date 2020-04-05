@@ -38,6 +38,51 @@ public enum CommandType {
         {
             this.command = new SetLanguageCommand();
         }
+    },
+    SHOW_SERVICE{
+        {
+            this.command = new ShowServiceCommand();
+        }
+    },
+    SHOW_CLEANER{
+        {
+            this.command = new ShowCleanerCommand();
+        }
+    },
+    SHOW_ORDER{
+        {
+            this.command = new ShowOrderCommand();
+        }
+    },
+    CREATE_ORDER{
+        {
+            this.command = new CreateOrderCommand();
+        }
+    },
+    UPDATE_CLIENT{
+        {
+            this.command = new UpdateClientCommand();
+        }
+    },
+    DELETE_ORDER{
+        {
+            this.command = new DeleteOrderCommand();
+        }
+    },
+    REGISTER{
+        {
+            this.command = new RegisterCommand();
+        }
+    },
+    SHOW_CLIENT{
+        {
+            this.command = new ShowClientCommand();
+        }
+    },
+    CREATE_CLEANER{
+        {
+            this.command = new CreateCleanerCommand();
+        }
     };
 
     Command command;

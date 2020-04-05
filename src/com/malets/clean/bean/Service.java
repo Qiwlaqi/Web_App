@@ -7,12 +7,12 @@ import java.util.Objects;
 public class Service extends Entity implements Serializable, Cloneable {
     private int serviceId;
     private BigDecimal price;
-    private ServiceType description;
+    private String description;
 
     public Service() {
     }
 
-    public Service(int serviceId, BigDecimal price, ServiceType description) {
+    public Service(int serviceId, BigDecimal price, String description) {
         this.serviceId = serviceId;
         this.price = price;
         this.description = description;
@@ -34,11 +34,11 @@ public class Service extends Entity implements Serializable, Cloneable {
         this.price = price;
     }
 
-    public ServiceType getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(ServiceType description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 

@@ -10,22 +10,28 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 
-public abstract class AbstractDAO <K, T extends Entity> {
+public abstract class AbstractDAO<K, T extends Entity> {
 
     private static Logger logger = LogManager.getLogger();
 
     public abstract List<T> findAll() throws DAoException;
-    public abstract T findEntityById (K id);
-    public abstract boolean delete(K id);
+
+    public abstract T findEntityById(K id);
+
+    public abstract boolean delete(K id) throws DAoException;
+
     public abstract boolean delete(T entity) throws DAoException;
+
     public abstract boolean create(T entity) throws DAoException;
+
     public abstract T update(T entity) throws DAoException;
-    public void close(Statement statement) throws DAoException{
+
+    public void close(Statement statement) throws DAoException {
         try {
-            if (statement != null){
+            if (statement != null) {
                 statement.close();
             }
-        } catch (SQLException ex){
+        } catch (SQLException ex) {
             logger.log(Level.ERROR, "Error while closing statement" + ex);
             throw new DAoException(ex);
         }

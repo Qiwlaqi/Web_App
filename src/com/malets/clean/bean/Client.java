@@ -4,17 +4,20 @@ import java.io.Serializable;
 
 public class Client extends User implements Serializable, Cloneable {
     private int clientId;
-    private int discount;
     private int rooms;
 
     public Client() {
         super();
     }
 
-    public Client(String login, String password, String name, String surname, int phone, int roleId, int clientId, int discount, int rooms) {
+    public Client(String login, String password, String name, String surname, int phone, int roleId, int rooms) {
+        super(login, password, name, surname, phone, roleId);
+        this.rooms = rooms;
+    }
+
+    public Client(String login, String password, String name, String surname, int phone, int roleId, int clientId, int rooms) {
         super(login, password, name, surname, phone, roleId);
         this.clientId = clientId;
-        this.discount = discount;
         this.rooms = rooms;
     }
 
@@ -24,14 +27,6 @@ public class Client extends User implements Serializable, Cloneable {
 
     public void setClientId(int clientId) {
         this.clientId = clientId;
-    }
-
-    public int getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(int discount) {
-        this.discount = discount;
     }
 
     public int getRooms() {
@@ -52,7 +47,6 @@ public class Client extends User implements Serializable, Cloneable {
         }
         Client guest = (Client) obj;
         return clientId == guest.clientId &&
-                discount == guest.discount &&
                 rooms == guest.rooms;
     }
 
@@ -61,14 +55,13 @@ public class Client extends User implements Serializable, Cloneable {
         final int prime = 31;
         int result = 1;
         result = prime * result + clientId;
-        result = prime * result + discount;
         result = prime * result + rooms;
         return result;
     }
 
     @Override
     public String toString() {
-        return new StringBuilder().append(" clientId=").append(clientId).append(", discount=").append(discount).
+        return new StringBuilder().append(" clientId=").append(clientId).
                 append(", rooms=").append(rooms).append("}").toString();
     }
 }

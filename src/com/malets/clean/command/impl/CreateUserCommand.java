@@ -21,7 +21,6 @@ public class CreateUserCommand implements Command {
         try {
             UserService.getInstance().createUser(user);
         } catch (ServiceException ex) {
-
             return ConfigurationManager.getProperty("path.page.exception");
         }
         req.setAttribute("user", user);

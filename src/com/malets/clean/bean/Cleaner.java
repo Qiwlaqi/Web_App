@@ -2,17 +2,21 @@ package com.malets.clean.bean;
 
 public class Cleaner extends User {
     private int cleanerId;
-    private int salary;
     private int category;
     private int seniority;
 
     public Cleaner() {
     }
 
-    public Cleaner(String login, String password, String name, String surname, int phone, int roleId, int cleanerId, int salary, int category, int seniority) {
+    public Cleaner(String login, String password, String name, String surname, int phone, int roleId, int category, int seniority) {
+        super(login, password, name, surname, phone, roleId);
+        this.category = category;
+        this.seniority = seniority;
+    }
+
+    public Cleaner(String login, String password, String name, String surname, int phone, int roleId, int cleanerId, int category, int seniority) {
         super(login, password, name, surname, phone, roleId);
         this.cleanerId = cleanerId;
-        this.salary = salary;
         this.category = category;
         this.seniority = seniority;
     }
@@ -23,14 +27,6 @@ public class Cleaner extends User {
 
     public void setCleanerId(int cleanerId) {
         this.cleanerId = cleanerId;
-    }
-
-    public int getSalary() {
-        return salary;
-    }
-
-    public void setSalary(int salary) {
-        this.salary = salary;
     }
 
     public int getCategory() {
@@ -59,7 +55,6 @@ public class Cleaner extends User {
         }
         Cleaner guest = (Cleaner) obj;
         return cleanerId == guest.cleanerId &&
-                salary == guest.salary &&
                 category == guest.category &&
                 seniority == guest.seniority;
     }
@@ -69,7 +64,6 @@ public class Cleaner extends User {
         final int prime = 31;
         int result = 1;
         result = prime * result + cleanerId;
-        result = prime * result + salary;
         result = prime * result + category;
         result = prime * result + seniority;
         return result;
@@ -77,7 +71,7 @@ public class Cleaner extends User {
 
     @Override
     public String toString() {
-        return new StringBuilder().append(" cleanerId=").append(cleanerId).append(", salary=").append(salary).
-                append(", category=").append(category).append(", seniority=").append(seniority).append("}").toString();
+        return new StringBuilder().append(" cleanerId=").append(cleanerId).append(", category=").
+                append(category).append(", seniority=").append(seniority).append("}").toString();
     }
 }

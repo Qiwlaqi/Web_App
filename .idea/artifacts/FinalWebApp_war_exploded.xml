@@ -7,6 +7,15 @@
         <element id="directory" name="classes">
           <element id="module-output" name="FinalWebApp" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="mysql-connector-java-8.0.17" />
+          <element id="library" level="project" name="log4j-api-2.12.1" />
+          <element id="library" level="project" name="testng-6.8.5" />
+          <element id="library" level="project" name="log4j-web-2.12.1" />
+          <element id="library" level="project" name="log4j-jcl-2.12.1" />
+          <element id="library" level="project" name="taglibs-standard-impl-1.2.5" />
+          <element id="library" level="project" name="jstl-1.2" />
+        </element>
       </element>
     </root>
   </artifact>

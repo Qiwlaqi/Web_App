@@ -16,10 +16,16 @@
     </context-param>
     <error-page>
         <error-code>404</error-code>
-        <location>/errors/error404.jsp</location>
+        <location>/error/error404.jsp</location>
     </error-page>
     <error-page>
         <exception-type>java.lang.Throwable</exception-type>
-        <location>/errors/error_exception.jsp</location>
+        <location>/error/exception.jsp</location>
     </error-page>
+    <jsp-config>
+        <taglib>
+            <taglib-uri>customtags</taglib-uri>
+            <taglib-location>/WEB-INF/tld/custom.tld</taglib-location>
+        </taglib>
+    </jsp-config>
 </web-app>
